@@ -41,7 +41,7 @@ title(strcat('$E(x,y) \propto \cos(k_c x)+ \cos(k_c y  \sin(\varphi) + k_c x \co
 axis('equal');
 hold on
 Z_sp=(Z >= 0);
-spy(Z_sp);
+spy(fliplr(Z_sp));
 xlabel('');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
