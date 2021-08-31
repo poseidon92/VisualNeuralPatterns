@@ -10,20 +10,20 @@ if b1*d1-b2*d2 >= 0
 end
 
 %Costruzione del nucleo e relativa trasformata di Fourier
-w_E=@(z) b1.*exp(-(z./d1).^2);
-w_I=@(z) b2.*exp(-(z./d2).^2);
-w=@(z) w_E(z)-w_I(z); 
+w_E=@(x) b1.*exp(-(x./d1).^2);
+w_I=@(x) b2.*exp(-(x./d2).^2);
+w=@(x) w_E(x)-w_I(x); 
 W=@(k) sqrt(pi).*(b1.*d1.*exp(-((d1.*k).^2)/4)-b2.*d2.*exp(-((d2.*k).^2)/4));
 
 %Plotting delle curve ottenute
-z=linspace(-ext,ext,1000);
-lims=[-ext,ext,min(w(z)),b1];
+x=linspace(-ext,ext,1000);
+lims=[-ext,ext,min(w(x)),b1];
 if plt==1
     hold on
     axis(lims);
-    xlabel('$z$','Interpreter','latex');
-    str_we=strcat('$w_E(z)=',num2str(b1),'e^{- \left(\frac{z}{',num2str(d1),'}\right)^2};');
-    str_wi=strcat('w_I(z)=',num2str(b2),'e^{- \left(\frac{z}{',num2str(d2),'}\right)^2}$');
+    xlabel('$x$','Interpreter','latex');
+    str_we=strcat('$w_E(x)=',num2str(b1),'e^{- \left(\frac{x}{',num2str(d1),'}\right)^2};');
+    str_wi=strcat('w_I(x)=',num2str(b2),'e^{- \left(\frac{x}{',num2str(d2),'}\right)^2}$');
     tstr=strcat(str_we , str_wi);
     title(tstr,'Interpreter','latex');
     xline(0,'Color','black','Linewidth',0.08);
@@ -36,8 +36,8 @@ if plt==1
     
     figure
     hold on
-    title('Nucleo di convoluzione $w(z)$','Interpreter','latex')
-    xlabel('$z$','Interpreter','latex');
+    title('Nucleo di convoluzione $w(x):=w_E(x)-w_I(x)$','Interpreter','latex')
+    xlabel('$x$','Interpreter','latex');
     axis(lims)
     xline(0,'Color','black','Linewidth',0.08);
     yline(0,'Color','black','Linewidth',0.08);
@@ -48,10 +48,10 @@ if plt==1
     
     figure
     hold on
-    z=linspace(-ext_W,ext_W,1000);
-    lims=[-ext_W,ext_W,min(W(z)),max(W(z))];
+    x=linspace(-ext_W,ext_W,1000);
+    lims=[-ext_W,ext_W,min(W(x)),max(W(x))];
     axis(lims);
-    title('Trasformata di Fourier del nucleo $W(k) := \hat{w}(k)$','Interpreter','latex')
+    title('Trasformata di Fourier del nucleo $W(k) := \widehat{w(x)}$','Interpreter','latex')
     xlabel('$k$','Interpreter','latex');
     xline(0,'Color','black','Linewidth',0.08);
     yline(0,'Color','black','Linewidth',0.08);
