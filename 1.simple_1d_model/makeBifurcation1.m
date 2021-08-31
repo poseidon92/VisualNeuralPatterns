@@ -11,7 +11,7 @@ a2=(10-a_c)*rand()+a_c;
 
 %Elaborazione del diagramma di biforcazione.
 hold on
-title(strcat('Modello 1-dimensionale, diagramma di biforcazione: $w(z)=',num2str(b1),'e^{- \left(\frac{z}{',num2str(d1),'}\right)^2} - ',num2str(b2),'e^{- \left(\frac{z}{',num2str(d2),'}\right)^2}$'),'Interpreter','latex');
+title(strcat('Modello 1-dimensionale, diagramma di biforcazione: $w(x)=',num2str(b1),'e^{- \left(\frac{x}{',num2str(d1),'}\right)^2} - ',num2str(b2),'e^{- \left(\frac{x}{',num2str(d2),'}\right)^2}$'),'Interpreter','latex');
 xlabel("Numeri d'onda $k$",'Interpreter','latex');
 ylabel("Dispersione $\lambda(k)$",'Interpreter','latex')
 z=linspace(0,ext,1000);
@@ -36,7 +36,7 @@ plot([k1,k2],[0,0],'Color','#880e4f','Linestyle',':','Linewidth',1);
 % caso a=a_c
 fplot(@(k) bif_fun(k,a_c),'Color','#607d8b');
 text(ext-0.2,bif_fun(ext-0.2,a_c)+0.2,strcat('$a=a_c=',num2str(a_c),'$'),'Interpreter','latex');
-plot([k_c,0],'Color','#607d8b','Marker','.','MarkerSize',10);
+plot(k_c,0,'Color','#607d8b','Marker','.','MarkerSize',10);
 text(k_c,-0.2,'$k_c$','Interpreter','latex','FontSize',8);
 % caso a>a_c
 fplot(@(k) bif_fun(k,a2),'Color','blue');
