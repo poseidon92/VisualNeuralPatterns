@@ -16,7 +16,7 @@ figure
 hold on
 axis('equal')
 colormap turbo
-title(strcat('$E(x,y)\propto \cos\left(k_c \left( \frac{\sqrt{3}}{2}y + \frac{1}{2}x \right)\right)+ \cos\left(k_c \left( \frac{\sqrt{3}}{2}y - \frac{1}{2}x \right)\right) +\cos(k_c x):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
+%title(strcat('$E(x_1,x_2)\propto \cos\left(k_c \left( \frac{\sqrt{3}}{2}x_2 + \frac{1}{2}x_1 \right)\right)+ \cos\left(k_c \left( \frac{\sqrt{3}}{2}x_2 - \frac{1}{2}x_1 \right)\right) +\cos(k_c x_1):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
 contourf(Z);
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
@@ -36,13 +36,13 @@ Z=cos(k_c*(sqrt(3)/2.*Y+1/2.*X))+cos(k_c*(sqrt(3)/2.*Y-1/2.*X))+cos(k_c.*X);
 
 %Visualizzazione dei valori positivi
 figure
-title(strcat('$E(x,y)\propto \cos\left(k_c \left( \frac{\sqrt{3}}{2}y + \frac{1}{2}x \right)\right)+ \cos\left(k_c \left( \frac{\sqrt{3}}{2}y - \frac{1}{2}x \right)\right) +\cos(k_c x):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
+%title(strcat('$E(x_1,x_2)\propto \cos\left(k_c \left( \frac{\sqrt{3}}{2}x_2 + \frac{1}{2}x_1 \right)\right)+ \cos\left(k_c \left( \frac{\sqrt{3}}{2}x_2 - \frac{1}{2}x_1 \right)\right) +\cos(k_c x_1):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
 axis('equal');
 hold on
 colormap gray
 Z_sp=(Z >= 0);
 contour(Z,[-1,-1]);
-spy(Z_sp);
+spy(fliplr(Z_sp));
 xlabel('');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);

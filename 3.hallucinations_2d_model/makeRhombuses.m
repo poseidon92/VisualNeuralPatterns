@@ -17,7 +17,7 @@ figure
 hold on
 axis('equal')
 colormap turbo
-title(strcat('$E(x,y)\propto \cos(k_c x)+ \cos(k_c x \cos(\varphi) + k_c y \sin(\varphi)): k_c=',num2str(k_c),'\ \varphi= \frac{\pi}{3}$'),'Interpreter','latex');
+%title(strcat('$E(x_1,x_2)\propto \cos(k_c x_1)+ \cos(k_c x_1 \cos(\varphi) + k_c x_2 \sin(\varphi)): k_c=',num2str(k_c),'\ \varphi= \frac{\pi}{3}$'),'Interpreter','latex');
 contourf(Z);
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
@@ -37,7 +37,7 @@ Z=cos(k_c.*X)+cos(k_c*X*cos(phi)+k_c*Y*sin(phi));
 
 %Visualizzazione dei valori positivi
 figure
-title(strcat('$E(x,y) \propto \cos(k_c x)+ \cos(k_c y  \sin(\varphi) + k_c x \cos(\varphi)): k_c=',num2str(k_c),'\varphi= \frac{\pi}{3}$'),'Interpreter','latex');
+%title(strcat('$E(x_1,x_2) \propto \cos(k_c x_1)+ \cos(k_c x_1  \cos(\varphi) + k_c x_2 \sin(\varphi)): k_c=',num2str(k_c),'\varphi= \frac{\pi}{3}$'),'Interpreter','latex');
 axis('equal');
 hold on
 Z_sp=(Z >= 0);

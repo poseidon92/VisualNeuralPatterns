@@ -16,7 +16,7 @@ figure
 hold on
 axis('equal')
 colormap turbo
-title(strcat('$E(x,y)\propto \cos(k_c x)+\cos(k_c y):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
+%title(strcat('$E(x_1,x_2)\propto \cos(k_c x_1)+\cos(k_c x_2):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
 contourf(Z);
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
@@ -36,11 +36,11 @@ Z=cos(k_c.*X)+cos(k_c.*Y);
 
 %Visualizzazione dei valori positivi
 figure
-title(strcat('$E(x,y)\propto \cos(k_c x)+\cos(k_c y):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
+%title(strcat('$E(x_1,x_2)\propto \cos(k_c x_1)+\cos(k_c x_2):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
 axis('equal');
 hold on
 Z_sp=(Z >= 0);
-spy(Z_sp);
+spy(fliplr(Z_sp));
 xlabel('');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);

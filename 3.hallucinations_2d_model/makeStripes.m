@@ -12,11 +12,11 @@ y=linspace(-ext,ext,1000);
 %Evidenzio i valori positivi della soluzione sui punti della griglia
 figure
 hold on
-title(strcat('Equilibri $E(x,y)\propto \cos(k_c x):','k_c=',num2str(k_c),'$'),'Interpreter','latex')
+%title(strcat('Equilibri $E(x_1,x_2)\propto \cos(k_c x_1):','k_c=',num2str(k_c),'$'),'Interpreter','latex')
 Z=(cos(k_c*X) >= 0);
-spy(Z);
-xlabel('$x$','Interpreter','latex');
-ylabel('$y$','Interpreter','latex');
+spy(fliplr(Z));
+xlabel('$x_1$','Interpreter','latex');
+ylabel('$x_2$','Interpreter','latex');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
@@ -32,15 +32,15 @@ beta=1;
 figure
 hold on
 axis('equal');
-title(strcat('Immagine sulla retina $E(x,y)\propto \cos(k_c x):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
+%title(strcat('Immagine sulla retina $E(x_1,x_2)\propto \cos(k_c x_1):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
 for l=1:length(Z)
     if Z(1,l) == 1
         z_ret=1/(2*beta)*exp(1/alpha.*X(:,l)+i.*Y(:,l));
         plot(z_ret,'Color',[0, 0.4470, 0.7410]);
     end
 end
-xlabel('$x$','Interpreter','latex');
-ylabel('$y$','Interpreter','latex');
+xlabel('$x_1$','Interpreter','latex');
+ylabel('$x_2$','Interpreter','latex');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
@@ -51,11 +51,11 @@ exportgraphics(gcf,'stripes1retina.jpg','Resolution',300);
 %Evidenzio i valori positivi della soluzione sui punti della griglia
 figure
 hold on
-title(strcat('Equilibri $E(x,y)\propto \cos(k_c y):','k_c=',num2str(k_c),'$'),'Interpreter','latex')
+%title(strcat('Equilibri $E(x_1,x_2)\propto \cos(k_c x_2):','k_c=',num2str(k_c),'$'),'Interpreter','latex')
 Z=(cos(k_c*Y) >= 0);
-spy(Z);
-xlabel('$x$','Interpreter','latex');
-ylabel('$y$','Interpreter','latex');
+spy(fliplr(Z));
+xlabel('$x_1$','Interpreter','latex');
+ylabel('$x_2$','Interpreter','latex');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
@@ -71,15 +71,15 @@ beta=1;
 figure
 hold on
 axis([-1e2,1e2,-1e2,1e2]);
-title(strcat('Immagine sulla retina $E(x,y)\propto \cos(k_c y):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
+%title(strcat('Immagine sulla retina $E(x_1,x_2)\propto \cos(k_c x_2):','k_c=',num2str(k_c),'$'),'Interpreter','latex');
 for m=1:length(Z)
     if Z(m,1) == 1
         z_ret=1/(2*beta)*exp(1/alpha.*X(m,:)+i.*Y(m,:));
         plot(z_ret,'Color',[0, 0.4470, 0.7410]);
     end
 end
-xlabel('$x$','Interpreter','latex');
-ylabel('$y$','Interpreter','latex');
+xlabel('$x_1$','Interpreter','latex');
+ylabel('$x_2$','Interpreter','latex');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
@@ -96,11 +96,11 @@ y=linspace(-ext,ext,2000);
 figure
 hold on
 phi=pi/3;
-title(strcat('Equilibri $E(x,y)\propto \cos(k_c x \cos(\varphi) + k_c y \sin(\varphi)):','k_c=',num2str(k_c),'\ \varphi= \frac{\pi}{3}','$'),'Interpreter','latex')
+%title(strcat('Equilibri $E(x_1,x_2)\propto \cos(k_c x_1 \cos(\varphi) + k_c x_2 \sin(\varphi)):','k_c=',num2str(k_c),'\ \varphi= \frac{\pi}{3}','$'),'Interpreter','latex')
 Z=(cos(k_c*X*cos(phi)+k_c*Y*sin(phi)) >= 0);
-spy(Z);
-xlabel('$x$','Interpreter','latex');
-ylabel('$y$','Interpreter','latex');
+spy(fliplr(Z));
+xlabel('$x_1$','Interpreter','latex');
+ylabel('$x_2$','Interpreter','latex');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
@@ -116,7 +116,7 @@ beta=1;
 figure
 hold on
 axis([-1e-2,1e-2,-1e-2,1e-2]);
-title(strcat('Immagine sulla retina $E(x,y)\propto \cos(k_c x \cos(\varphi) + k_c y \sin(\varphi)):','k_c=',num2str(k_c),'\ \varphi= \frac{\pi}{3}','$'),'Interpreter','latex')
+%title(strcat('Immagine sulla retina $E(x_1,x_2)\propto \cos(k_c x_1 \cos(\varphi) + k_c x_2 \sin(\varphi)):','k_c=',num2str(k_c),'\ \varphi= \frac{\pi}{3}','$'),'Interpreter','latex')
 for m=1:length(Z)
     if Z(m,1) == 1
         z_ret=[];
@@ -128,8 +128,8 @@ for m=1:length(Z)
         plot(z_ret,'Color',[0, 0.4470, 0.7410]);
     end
 end
-xlabel('$x$','Interpreter','latex');
-ylabel('$y$','Interpreter','latex');
+xlabel('$x_1$','Interpreter','latex');
+ylabel('$x_2$','Interpreter','latex');
 % cancellazione dei valori sugli assi
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);

@@ -35,8 +35,8 @@ if plt==1
     %Elaborazione del diagramma di biforcazione.
     hold on
     title('Modello 2-dimensionale, diagramma di biforcazione','Interpreter','latex');
-    xlabel("Numeri d'onda $k$",'Interpreter','latex');
-    ylabel("Dispersione $\Re(\lambda(k))$",'Interpreter','latex');
+    xlabel("$||\textbf{k}||$",'Interpreter','latex');
+    ylabel("Dispersione $\Re(\lambda(\textbf{k}))$",'Interpreter','latex');
     k=linspace(0,ext,200);
     lims=[0,ext,min(lambda(k,p1)),max(lambda(k,p2))];
     axis(lims);
